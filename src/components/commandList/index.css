@@ -1,0 +1,94 @@
+.m-editor-cl{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.command-item{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  width: 20px;
+  height: 100%;
+}
+.m-editor-panel{
+  position: absolute;
+  display: none;
+  flex-wrap: wrap;
+  top: 27px;
+  left: 0;
+  background: #fff;
+}
+
+.panel-align{
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  border: 1px solid #666;
+  border-radius: 10px;
+}
+
+.panel-color{
+  width: 120px;
+  height: 120px;
+  border: 1px solid #666;
+  border-radius: 10px;
+}
+
+.panel-fs{
+  width: 240px;
+  height: 240px;
+  border: 1px solid #666;
+  border-radius: 10px;
+}
+
+.panel-color div{
+  width: 16px;
+  height: 16px;
+  margin: 5px;
+  float: left;
+  cursor: pointer;
+}
+
+.command-item.item-align:hover .panel-align{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.command-item.item-color:hover .panel-color{
+  display: block;
+}
+
+.command-item.item-fs:hover .panel-fs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+
+.u-none-ip{
+  position: absolute;
+  z-index: -1;
+  top: -200px;
+  left: -200px;
+  display: none;
+  width: 1px;
+  height: 1px;
+}
+
+.u-icon{
+  transition: all .2s;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+.u-icon:hover{
+  color: red;
+}

@@ -69,9 +69,11 @@ class EditStore {
 
   @action.bound execCommands = (obj) => {
     const { type, value = null } = obj
-    console.log(obj)
     this.getEditRange()
+    // 采用css设置样式
     document.execCommand('styleWithCSS', false, null)
+    // 按下enter键时分开两个块
+    document.execCommand('insertBrOnReturn', false, null)
     document.execCommand(type, false, value)
   }
 

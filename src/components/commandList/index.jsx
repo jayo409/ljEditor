@@ -27,7 +27,7 @@ const commands = [
     param: {
       type: 'bold'
     },
-    icon: 'zuoduiqi'
+    icon: 'jiacu'
   },
   {
     type: '斜体',
@@ -35,7 +35,7 @@ const commands = [
     param: {
       type: 'italic'
     },
-    icon: 'zuoduiqi'
+    icon: 'xieti'
   },
   {
     type: '字号',
@@ -51,6 +51,15 @@ const commands = [
     type: '背景色',
     icon: 'zitibeijingse',
     cls: 'color'
+  },
+  {
+    type: '代码块',
+    event: 'exec',
+    param: {
+      type: 'formatBlock',
+      value: 'pre'
+    },
+    icon: 'daimakuai'
   },
   {
     type: '撤销',
@@ -129,6 +138,10 @@ export default class CommandList extends React.Component {
       default:
         break;
     }
+  }
+
+  handleKeydown = (e) => {
+    console.log(e)
   }
 
   render () {

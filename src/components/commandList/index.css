@@ -6,6 +6,25 @@
   height: 100%;
 }
 
+.m-emoji-body{
+  position: absolute;
+  top: -151px;
+  left: 0;
+  width: 400px;
+  height: 150px;
+  overflow-y: auto;
+  background: #fff;
+}
+.u-emoji-icon{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.u-emoji-icon img{
+  width: 20px;
+  height: 20px;
+}
+
 .command-item{
   position: relative;
   display: flex;
@@ -22,6 +41,14 @@
   top: 27px;
   left: 0;
   background: #fff;
+}
+
+.panel-il{
+  width: 120px;
+  height: 80px;
+  background: #fff;
+  border: 1px solid #666;
+  border-radius: 3px;
 }
 
 .panel-align{
@@ -46,6 +73,22 @@
   border-radius: 10px;
 }
 
+.panel-ff{
+  width: 120px;
+  height: 120px;
+  border: 1px solid #666;
+  border-radius: 10px;
+}
+
+.panel-ff div{
+  cursor: pointer;
+}
+
+.panel-fs font{
+  cursor: pointer;
+  text-align: center;
+}
+
 .panel-color div{
   width: 16px;
   height: 16px;
@@ -65,7 +108,7 @@
   display: block;
 }
 
-.command-item.item-fs:hover .panel-fs{
+.command-item.item-fs:hover .panel-fs, .command-item.item-ff:hover .panel-ff{
   display: flex;
   flex-direction: column;
   justify-content: center;

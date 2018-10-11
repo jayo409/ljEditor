@@ -7,18 +7,21 @@ configure({
 
 class EditStore {
 
-  // 表情框显示
-  @observable emojiVisible = ''
+  // 面板显示
+  @observable panelVisible = {
+    emoji: false,
+    insertLink: false
+  }
   // 光标最后位置
   @observable lastEditRange = null
 
   @action.bound changeVisible = (param) => {
-    this[`${param}Visible`] = !this[`${param}Visible`]
+    this.panelVisible[param] = !this.panelVisible[param]
   }
 
   @action.bound addEmoji = (emoji) => {
     this.getEditRange()
-    document.execCommand('insertHTML', false, `<img data-obj="[${emoji.key}]" src="${emoji.img}" style="width: 15px;height: 15px;margin: 0px 3px;"/>`)
+    document.execCommand('insertHTML', false, `<img data-obj="[${emoji.key}]" src="${emoji.img}" class="emoji" />`)
     this.setEditRange()
   }
 

@@ -34,6 +34,7 @@ export default class Editor extends React.Component {
           className="editor-body"
           contentEditable="true"
           onClick={() => editStore.setEditRange()}
+          onSelect={() => editStore.setEditRange()}
           onKeyUp={(e) => this.handleKeyUp(e)}
         />
       </div>

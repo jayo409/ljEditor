@@ -74,13 +74,24 @@ const commandList = [
     icon: 'lianjie'
   },
   {
+    type: '删除链接',
+    event: 'exec',
+    param: {type: 'unlink'},
+    icon: 'icon_shanchulianjie'
+  },
+  {
     type: '代码块',
+    event: 'addCode',
+    icon: 'daimakuai'
+  },
+  {
+    type: '引用',
     event: 'exec',
     param: {
       type: 'formatBlock',
-      value: 'pre'
+      value: 'blockquote'
     },
-    icon: 'daimakuai'
+    icon: 'yinyong'
   },
   {
     type: '撤销',

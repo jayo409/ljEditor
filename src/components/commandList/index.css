@@ -44,8 +44,8 @@
 }
 
 .panel-il{
-  width: 120px;
-  height: 80px;
+  width: 240px;
+  height: 120px;
   background: #fff;
   border: 1px solid #666;
   border-radius: 3px;
@@ -134,4 +134,12 @@
 
 .u-icon:hover{
   color: red;
+}
+
+.u-ip{
+  display: block;
+  outline: none;
+  text-indent: 4px;
+  border: 1px solid #666;
+  border-radius: 4px;
 }

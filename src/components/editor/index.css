@@ -23,7 +23,7 @@
   width: 100%;
   height: calc(100% - 50px);
 }
-.editor-body pre{
+.editor-body blockquote{
   display: block;
   border-left: 8px solid #d0e5f2;
   padding: 5px 10px;

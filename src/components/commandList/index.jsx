@@ -22,6 +22,9 @@ export default class CommandList extends React.Component {
       case 'addImg':
         this.noneIp.click()
         break;
+      case 'addCode':
+        editStore.addCode()
+        break;
       default:
         break;
     }
@@ -40,6 +43,28 @@ export default class CommandList extends React.Component {
       />
     )
 
+    // 返回对应面板
+    const curPanel = (type) => {
+      switch (type) {
+        case '对齐':
+          return <AlignPanel list={alignList} />
+        case '表情':
+          return <EmojiPanel />
+        case '背景色':
+          return <ColorPanel type='backColor' list={colorList} />
+        case '字体颜色':
+          return <ColorPanel type='foreColor' list={colorList} />
+        case '字号':
+          return <FontSizePanel list={fontSizeList} />
+        case '字体':
+          return <FontFamilyPanel list={fontFamilyList} />
+        case '添加链接':
+          return <InsertLinkPanel />
+        default:
+          break;
+      }
+    }
+
     return (
       <div
         className="m-editor-cl"
@@ -51,20 +76,13 @@ export default class CommandList extends React.Component {
               key={index}
               className={`command-item${item.cls ? ' item-' + item.cls : ''}`}
               title={item.type}
-              onClick={() => this.handleEvents(item.event, item.param)}
             >
-              <i 
+              <i
                 className={`u-icon iconfont icon-${item.icon}`}
+                onClick={() => this.handleEvents(item.event, item.param)}
               />
               {
-                item.type === '对齐' ?
-                <AlignPanel list={alignList}/> : item.type === '表情' ?
-                <EmojiPanel /> : item.type === '背景色' ?
-                <ColorPanel type='backColor' list={colorList} /> : item.type === '字体颜色' ?
-                <ColorPanel type='foreColor' list={colorList} /> : item.type === '字号' ? 
-                <FontSizePanel list={fontSizeList} /> : item.type === '字体' ? 
-                <FontFamilyPanel list={fontFamilyList} /> : item.type === '添加链接' ?
-                <InsertLinkPanel /> : null
+                curPanel(item.type)
               }
             </div>
           ))

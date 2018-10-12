@@ -1,5 +1,5 @@
 // 保存用户信息
-import { observable, configure, action } from 'mobx';
+import { observable, configure, action, computed } from 'mobx';
 
 configure({
   enforceActions: 'always'
@@ -26,26 +26,29 @@ class EditStore {
   }
 
   @action.bound setEditRange() {
-    let selection = getSelection()
+    let selection = window.getSelection()
     // 设置最后光标对象
     this.lastEditRange = selection.getRangeAt(0)
   }
 
   // 设置光标位置
   @action.bound getEditRange = () => {
-    let selection = getSelection()
+    let selection = window.getSelection()
     if (this.lastEditRange) {
       // 存在最后光标对象，选定对象清除所有光标并添加最后光标还原之前的状态
       selection.removeAllRanges()
       selection.addRange(this.lastEditRange)
     } else {
-      // 创建selection
-      let selection = window.getSelection()
       // selection 选择obj下所有子内容
       selection.selectAllChildren(document.querySelector('.editor-body'))
       // 光标移至最后
       selection.collapseToEnd()
     }
+  }
+
+  // 获取选区内容
+  @computed get getSelectionText () {
+    return window.getSelection().toString()
   }
 
   // 添加图片
@@ -70,6 +73,12 @@ class EditStore {
     }
   }
 
+  @action.bound addCode = () => {
+    this.getEditRange()
+    document.execCommand('insertHTML', false, `<pre><code>${this.getSelectionText}</code></pre>`)
+    this.setEditRange()
+  }
+
   @action.bound execCommands = (obj) => {
     const { type, value = null } = obj
     this.getEditRange()
@@ -78,6 +87,7 @@ class EditStore {
     // 按下enter键时分开两个块
     document.execCommand('insertBrOnReturn', false, null)
     document.execCommand(type, false, value)
+    console.log(this.getSelectionText)
   }
 
 }

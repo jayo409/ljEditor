@@ -7,7 +7,7 @@ export default class App extends React.Component {
   render () {
     return (
       <Editor
-        style={{width: 500, height: 500, margin: '200px auto'}}
+        style={{width: 800, height: 500, margin: '200px auto'}}
       />
     )
   }

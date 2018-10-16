@@ -4,6 +4,7 @@ import FontSizePanel from './fontSizePanel';
 import FontFamilyPanel from './fontFamilyPanel';
 import EmojiPanel from './emojiPanel';
 import InsertLinkPanel from './insertLinkPanel';
+import CodePanel from './codePanel';
 
 export {
   AlignPanel,
@@ -11,5 +12,6 @@ export {
   FontSizePanel,
   FontFamilyPanel,
   EmojiPanel,
-  InsertLinkPanel
+  InsertLinkPanel,
+  CodePanel
 }

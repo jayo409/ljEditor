@@ -12,8 +12,9 @@
   <div contenteditable="true">123456</div>
   <script>
     var div = document.querySelector('div')
-    div.onkeydown = (e) => {
+    div.onkeyup = (e) => {
       console.log(e)
+      e.preventDefault()
     }
   </script>
 </body>

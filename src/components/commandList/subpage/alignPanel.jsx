@@ -8,7 +8,7 @@ const AlignPanel = (props) => (
       props.list.map((item, index) => (
         <div
           key={index}
-          onClick={() => this.handleEvents(item.event, item.param)}
+          onClick={() => props.handleEvents(item.event, item.param)}
         >
           {item.title}
         </div>

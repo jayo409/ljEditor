@@ -9,7 +9,7 @@ const FontSizePanel = (props) => (
         <font
           key={index}
           size={item}
-          onClick={() => this.handleEvents('exec', { type: 'fontSize', value: item })}
+          onClick={() => props.handleEvents('exec', { type: 'fontSize', value: item })}
         >
           FontSize
         </font>

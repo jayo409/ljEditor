@@ -9,7 +9,7 @@ const FontFamilyPanel = (props) => (
         <div
           key={index}
           size={item}
-          onClick={() => this.handleEvents('exec', { type: 'fontName', value: item })}
+          onClick={() => props.handleEvents('exec', { type: 'fontName', value: item })}
         >
           {item}
         </div>

@@ -21,7 +21,8 @@ const commandList = [
     param: {
       type: 'bold'
     },
-    icon: 'jiacu'
+    icon: 'jiacu',
+    isActiveKey: 'bold'
   },
   {
     type: '斜体',
@@ -29,11 +30,12 @@ const commandList = [
     param: {
       type: 'italic'
     },
-    icon: 'xieti'
+    icon: 'xieti',
+    isActiveKey: 'italic'
   },
   {
     type: '字号',
-    icon: 'comiisyanseshezhi',
+    icon: 'zihao',
     cls: 'fs'
   },
   {
@@ -43,12 +45,12 @@ const commandList = [
   },
   {
     type: '字体颜色',
-    icon: 'Font-color',
+    icon: 'wenziyanse',
     cls: 'color'
   },
   {
     type: '背景色',
-    icon: 'zitibeijingse',
+    icon: 'beijingse',
     cls: 'color'
   },
   {
@@ -57,7 +59,8 @@ const commandList = [
     param: {
       type: 'underline'
     },
-    icon: 'xiahuaxian'
+    icon: 'xiahuaxian',
+    isActiveKey: 'underline'
   },
   {
     type: '删除线',
@@ -65,24 +68,29 @@ const commandList = [
     param: {
       type: 'strikeThrough'
     },
-    icon: 'shanchuxian'
+    icon: 'shanchuxian',
+    isActiveKey: 'strikeThrough'
   },
   {
     type: '添加链接',
     event: 'visible',
     param: 'insertLink',
-    icon: 'lianjie'
+    icon: 'lianjie',
+    isActiveKey: 'A'
   },
   {
     type: '删除链接',
     event: 'exec',
-    param: {type: 'unlink'},
-    icon: 'icon_shanchulianjie'
+    param: {
+      type: 'unlink'
+    },
+    icon: 'quxiaolianjie',
   },
   {
     type: '代码块',
     event: 'addCode',
-    icon: 'daimakuai'
+    icon: 'daimakuai',
+    isActiveKey: 'PRE'
   },
   {
     type: '引用',
@@ -91,7 +99,8 @@ const commandList = [
       type: 'formatBlock',
       value: 'blockquote'
     },
-    icon: 'yinyong'
+    icon: 'yinyong',
+    isActiveKey: 'formatBlock'
   },
   {
     type: '撤销',
@@ -107,7 +116,7 @@ const commandList = [
     param: {
       type: 'redo'
     },
-    icon: 'zhongzuo'
+    icon: 'chongzuo'
   }
 ]
 
@@ -155,10 +164,42 @@ const fontFamilyList = [
   '宋体', '微软雅黑', 'Arial', 'Tahoma', 'Verdana'
 ]
 
+const isActiveKeyList = [
+  {
+    type: 'queryCommand',
+    key: 'bold'
+  },
+  {
+    type: 'queryCommand',
+    key: 'italic'
+  },
+  {
+    type: 'queryCommand',
+    key: 'formatBlock'
+  },
+  {
+    type: 'queryCommand',
+    key: 'strikeThrough'
+  },
+  {
+    type: 'queryCommand',
+    key: 'underline'
+  },
+  {
+    type: 'queryDom',
+    key: 'A'
+  },
+  {
+    type: 'queryDom',
+    key: 'PRE'
+  }
+]
+
 export {
   commandList,
   alignList,
   colorList,
   fontSizeList,
-  fontFamilyList
+  fontFamilyList,
+  isActiveKeyList
 }

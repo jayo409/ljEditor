@@ -24,6 +24,7 @@ class EditStore {
     this.panelVisible[param] = !this.panelVisible[param]
   }
 
+  // 获取当前选区状态
   @action.bound getCommandState = () => {
     this.curCommandState = []
     isActiveKeyList.forEach((item) => {
@@ -33,22 +34,24 @@ class EditStore {
         }
       } else if (item.type === 'queryDom') {
         let getParentNode = (name, dom) => {
+          console.log(dom.nodeName)
+          console.log(name)
           if (dom.nodeName === name) {
             return true
-          }
-          if (dom.className === 'editor-body') {
+          } else if (dom.className === 'editor-body') {
             return false
+          } else {
+            return getParentNode(name, dom.parentNode)
           }
-          getParentNode(name, dom.parentNode)
         }
         const isActive = getParentNode(item.key, Sel.getSelectionContainerElem())
+        console.log(isActive)
         if (isActive) {
           this.curCommandState.push(item.key)
         }
       }
     })
   }
-
 
   // 添加表情
   @action.bound addEmoji = (emoji) => {

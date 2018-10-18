@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="main.js"></script>
+  <title></title>
 </head>
+
 <body>
-  <div contenteditable="true">123456</div>
-  <script>
-    var div = document.querySelector('div')
-    div.onkeyup = (e) => {
-      console.log(e)
-      e.preventDefault()
-    }
-  </script>
+  <span id="content">1324567982</span>
 </body>
+<script type="text/javascript">
+  window.onload = function () {
+    var dom = document.querySelector('#content')
+    var nodeText = dom.childNodes.item(0)
+    dom.setAttribute('contenteditable', true)
+    var Sel = window.getSelection()
+    Sel.selectAllChildren(nodeText)
+    var range = Sel.getRangeAt(0)
+    var clonedRange = range.cloneRange()
+    var index = dom.innerHTML.indexOf('2')
+    clonedRange.setStart(Sel.anchorNode, index)
+    clonedRange.setEnd(Sel.focusNode, index + 1)
+    Sel.removeAllRanges()
+    Sel.addRange(clonedRange)
+    document.execCommand('foreColor', false, 'red')
+    Sel.removeAllRanges()
+    dom.setAttribute('contenteditable', false)
+  }
+</script>
+
 </html>

@@ -11,21 +11,6 @@ import { editStore } from '../../stores';
 @inject('editStore')
 @observer
 export default class Editor extends React.Component {
-
-  state = {
-    src: ''
-  }
-
-  componentDidMount = () => {
-    var img = document.querySelector('.img');
-    var cs = document.createElement('canvas');
-    cs.getContext('2d').drawImage(img, 100, 100, 100, 100, 0, 0, 100, 100);
-    var base64 = cs.toDataURL('image/jpeg')
-    console.log(base64)
-    this.setState({
-      src: base64
-    })
-  }
   
   handleEditor = (key, e) => {
     if (key === 'keyup') {
@@ -40,7 +25,6 @@ export default class Editor extends React.Component {
 
   render() {
     return (
-      [
       <div
         className="m-editor"
         style={this.props.style}
@@ -56,10 +40,7 @@ export default class Editor extends React.Component {
           onSelect={() => this.handleEditor()}
           onKeyUp={(e) => this.handleEditor('keyup', e)}
         />
-      </div>,
-      <img src={require('./img.png')} className="img" alt="" style={{width: 20, height: 20}} />,
-      <img src={this.state.src} alt=""/>
-      ]
+      </div>
     )
   }
 }

@@ -9,6 +9,7 @@ const AlignPanel = (props) => (
         <div
           key={index}
           onClick={() => props.handleEvents(item.event, item.param)}
+          className="panel-align-item"
         >
           {item.title}
         </div>

@@ -79,6 +79,7 @@ export default class CommandList extends React.Component {
             <div
               key={index}
               className={`command-item${item.cls ? ' item-' + item.cls : ''}`}
+              // title={item.type}
             >
               <i
                 className={`u-icon iconfont icon-${item.icon}${editStore.curCommandState.indexOf(item.isActiveKey) > -1 ? ' z-sel' : ''}`}

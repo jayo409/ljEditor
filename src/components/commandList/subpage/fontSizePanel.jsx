@@ -8,10 +8,10 @@ const FontSizePanel = (props) => (
       props.list.map((item, index) => (
         <font
           key={index}
-          size={item}
-          onClick={() => props.handleEvents('exec', { type: 'fontSize', value: item })}
+          onClick={() => props.handleEvents('exec', { type: 'fontSize', value: item.size })}
+          className="panel-fs-item"
         >
-          FontSize
+          {item.title}
         </font>
       ))
     }

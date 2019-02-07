@@ -60,3 +60,25 @@
 .emoji{
   width: 15px;height: 15px;margin: 0px 3px;
 }
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+    /* background-color: #ebeef3; */
+    -webkit-border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 32px;
+    background-color: rgba(0,0,0,0.18);
+    -webkit-border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 32px;
+    background-color: rgba(0,0,0,0.18);
+    -webkit-border-radius: 4px;
+}

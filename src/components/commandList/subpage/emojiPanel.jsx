@@ -1,3 +1,6 @@
+/**
+ * 表情选择面板
+ */
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 
@@ -37,7 +40,7 @@ export default class EmojiList extends React.Component {
     return (
       <div
         className="m-emoji-body"
-        style={{ display: editStore.panelVisible.emoji ? 'block' : 'none' }}
+        style={{ display: editStore.panelVisible.emoji ? 'flex' : 'none' }}
       >
         {
           getEmojiList('emoji', emojiObj.emojiList).map((item, key) => (

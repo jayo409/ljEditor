@@ -153,11 +153,158 @@ const alignList = [
 ]
 
 const colorList = [
-  '#666', '#999', '#fff', '#000', '#ffc', '#eee', '#ffb000', '#333', '#ffbccc', '#ccbb22', '#bb2'
+  {
+    title: '暗玉紫',
+    color: '#5c2223'
+  },
+  {
+    title: '粟紫',
+    color: '#5a191b'
+  },
+  {
+    title: '葡菊酱紫',
+    color: '#5a1216'
+  },
+  {
+    title: '金鱼紫',
+    color: '#500a16'
+  },
+  {
+    title: '甘蔗紫',
+    color: '#621624'
+  },
+  {
+    title: '枣红',
+    color: '#7c1823'
+  },
+  {
+    title: '高粱红',
+    color: '#c02c38'
+  },
+  {
+    title: '殷红',
+    color: '#82111f'
+  },
+  {
+    title: '茶花红',
+    color: '#ee3f4d'
+  },
+  {
+    title: '烟红',
+    color: '#894e54'
+  },
+  {
+    title: '满天星蓝',
+    color: '#2e317c'
+  },
+  {
+    title: '尼罗蓝',
+    color: '#2474b5'
+  },
+  {
+    title: '柏林蓝',
+    color: '#126bae'
+  },
+  {
+    title: '晴山蓝',
+    color: '#8fb2c9'
+  },
+  {
+    title: '釉蓝',
+    color: '#1781b5'
+  },
+  {
+    title: '苍绿',
+    color: '#223e36'
+  },
+  {
+    title: '亚丁绿',
+    color: '#428675'
+  },
+  {
+    title: '竹绿',
+    color: '#1ba784'
+  },
+  {
+    title: '石绿',
+    color: '#57c3c2'
+  },
+  {
+    title: '浪花绿',
+    color: '#92b3a5'
+  },
+  {
+    title: '姜黄',
+    color: '#e2c027'
+  },
+  {
+    title: '藤黄',
+    color: '#ffd111'
+  },
+  {
+    title: '柠檬黄',
+    color: '#fcd337'
+  },
+  {
+    title: '栀子黄',
+    color: '#ebb10d'
+  },
+  {
+    title: '淡密黄',
+    color: '#f9d367'
+  },
+  {
+    title: '拃叶棕',
+    color: '#692a1b'
+  },
+  {
+    title: '橡树棕',
+    color: '#773d31'
+  },
+  {
+    title: '可可棕',
+    color: '#652b1c'
+  },
+  {
+    title: '火山棕',
+    color: '#482522'
+  },
+  {
+    title: '铁棕',
+    color: '#d85916'
+  }
 ]
 
 const fontSizeList = [
-  1, 2, 3, 4, 5, 6, 7
+  1, 2, 3, 4, 5, 6, 7,
+  {
+    size: 1,
+    title: 'x-small'
+  },
+  {
+    size: 2,
+    title: 'small'
+  },
+  {
+    size: 3,
+    title: 'normal'
+  },
+  {
+    size: 4,
+    title: 'large'
+  },
+  {
+    size: 5,
+    title: 'x-large'
+  },
+  {
+    size: 6,
+    title: 'xx-large'
+  },
+  {
+    size: 7,
+    title: 'xxx-large'
+  }
 ]
 
 const fontFamilyList = [

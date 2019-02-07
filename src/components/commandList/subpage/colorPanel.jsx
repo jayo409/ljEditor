@@ -8,7 +8,7 @@ const ColorPanel = (props) => (
       props.list.map((item, index) => (
         <div
           key={index}
-          style={{ background: item }}
+          style={{ background: item.color }}
           onClick={() => props.handleEvents('exec', { type: props.type, value: item })}
         />
       ))

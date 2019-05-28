@@ -13,9 +13,15 @@ import { editStore } from '../../stores';
 export default class Editor extends React.Component {
   
   handleEditor = (key, e) => {
+    
     if (key === 'keyup') {
       if (e.keyCode === 13) {
         editStore.enterKeyEvent(e)
+      }
+    } else if (key === 'keydown') {
+      if (e.keyCode === 9) {
+        e.preventDefault(); 
+        editStore.tabKeyEvent(e);
       }
     }
     // 保存光标
@@ -39,7 +45,9 @@ export default class Editor extends React.Component {
           contentEditable="true"
           onSelect={() => this.handleEditor()}
           onKeyUp={(e) => this.handleEditor('keyup', e)}
-        />
+          onKeyDown={(e) => this.handleEditor('keydown', e)}
+        >
+        </div>
       </div>
     )
   }

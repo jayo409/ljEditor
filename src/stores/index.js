@@ -34,8 +34,6 @@ class EditStore {
         }
       } else if (item.type === 'queryDom') {
         let getParentNode = (name, dom) => {
-          console.log(dom.nodeName)
-          console.log(name)
           if (dom.nodeName === name) {
             return true
           } else if (dom.className === 'editor-body') {
@@ -45,7 +43,6 @@ class EditStore {
           }
         }
         const isActive = getParentNode(item.key, Sel.getSelectionContainerElem())
-        console.log(isActive)
         if (isActive) {
           this.curCommandState.push(item.key)
         }
@@ -86,7 +83,7 @@ class EditStore {
   @action.bound addCode = (value) => {
     Sel.getEditRange()
     if (value) {
-      document.execCommand('insertHTML', false, `<pre><code>${value}</code></pre>`)
+      document.execCommand('insertHTML', false, `<pre><code>${value}</code></pre><div><br></div>`)
       Sel.setEditRange()
       this.panelVisible.code = !this.panelVisible.code
       return
@@ -117,6 +114,12 @@ class EditStore {
     }
   }
 
+  // tab键事件
+  @action.bound tabKeyEvent = () => {
+    document.execCommand('insertText', false, '\t')
+  }
+
+  // 运行命令
   @action.bound execCommands = (obj) => {
     const { type, value = null } = obj
     Sel.getEditRange()

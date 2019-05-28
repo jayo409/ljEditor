@@ -61,6 +61,10 @@
   width: 15px;height: 15px;margin: 0px 3px;
 }
 
+td, th {
+  border: 1px solid #eee;
+}
+
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;

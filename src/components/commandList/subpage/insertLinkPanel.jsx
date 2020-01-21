@@ -1,9 +1,28 @@
 import React from 'react'
 import { observer, inject } from 'mobx-react';
 
+import { isChildNode } from '../../../utils';
+
 @inject('editStore')
 @observer
 export default class InsertLinkPanel extends React.Component {
+
+  componentDidMount () {
+		document.addEventListener('click', this.handleHiddenPanle);
+	}
+
+	componentWillUnmount () {
+		document.removeEventListener('click', this.handleHiddenPanle);
+	}
+
+	// 隐藏面板
+	handleHiddenPanle = (e) => {
+    const { editStore } = this.props;
+    console.log(this.props.editStore.panelVisible.code);
+		if (!isChildNode(e.target, 'panel-il') && !isChildNode(e.target, 'command-item')) {
+			editStore.changeVisible('insertLink', 1);
+		}
+	}
 
   handleClick = () => {
     const { editStore } = this.props;
@@ -22,11 +41,11 @@ export default class InsertLinkPanel extends React.Component {
           type="text"
           className="u-ip"
           placeholder="输入链接地址"
-          style={{width: '88%', height: '40px', margin: '20px auto 0'}}
+          style={{width: '100%', height: '36px', margin: '20px auto 0'}}
           ref={ref => this.ip = ref}
         />
         <div
-          style={{margin: '15px auto', width: 60, height: 30, background: '#999', color: '#fff', borderRadius: '6px', lineHeight: '30px', textAlign: 'center', cursor: 'pointer'}}
+          className="button"
           onClick={() => this.handleClick()}
         >
           确定

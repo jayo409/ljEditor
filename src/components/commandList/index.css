@@ -80,8 +80,10 @@
 }
 
 .panel-il{
-  width: 240px;
-  height: 120px;
+  width: 260px;
+  height: 110px;
+  box-sizing: border-box;
+  padding: 5px 12px;
 }
 
 .panel-align{
@@ -197,7 +199,7 @@
   color: #666;
 }
 
-.u-icon:hover{
+.u-icon:hover {
   color: #ed5a65;
 }
 
@@ -205,10 +207,60 @@
   color: #ed5a65;
 }
 
-.u-ip{
+.u-ip {
   display: block;
   outline: none;
   text-indent: 4px;
   border: 1px solid #666;
   border-radius: 4px;
+}
+
+.panel-code {
+  padding: 12px;
+  width: 250px;
+  height: 160px;
+  box-sizing: border-box;
+}
+
+.panel-code textarea {
+  outline: none;
+  width: 100%;
+  height: 100px;
+  resize: none;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.button {
+  float: right;
+  margin-top: 6px;
+  width: 60px;
+  text-align: center;
+  height: 28px;
+  line-height: 28px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 8px;
+  background-color: #ed5a65;
+}
+
+.panel-table {
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+}
+
+.table-wrap, .table-btn {
+  display: flex;
+  width: 270px;
+}
+
+.table-wrap span, .table-btn span {
+  line-height: 32px;
+}
+
+.table-btn {
+  margin-top: 15px;
+  justify-content: flex-end;
 }

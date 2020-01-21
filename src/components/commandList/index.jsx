@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 
-import { AlignPanel, ColorPanel, FontSizePanel, FontFamilyPanel, EmojiPanel, InsertLinkPanel, CodePanel } from './subpage';
+import { AlignPanel, ColorPanel, FontSizePanel, FontFamilyPanel, EmojiPanel, InsertLinkPanel, CodePanel, TablePanel } from './subpage';
 import { commandList, alignList, colorList, fontSizeList, fontFamilyList } from '../../configs/toolbarsData';
 
 import './index.css';
@@ -53,6 +53,8 @@ export default class CommandList extends React.Component {
         return <InsertLinkPanel />
       case '代码块':
         return <CodePanel />
+      case '表格':
+        return <TablePanel />
       default:
         break;
     }

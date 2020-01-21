@@ -6,7 +6,7 @@
 .m-editor{
   position: relative;
   border-radius: 8px;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
 }
 .editor-top{
   display: flex;
@@ -61,8 +61,31 @@
   width: 15px;height: 15px;margin: 0px 3px;
 }
 
+table {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  table-layout: fixed ;
+
+}
+
+th {
+  text-align: center;
+}
+
 td, th {
-  border: 1px solid #eee;
+  max-width: 40px;
+  border: 0.5px solid #ccc;
+  padding: 3px 5px;
+}
+
+td.selected-item, th.selected-item {
+  background: #edf5fa;
+}
+td.focus, th.focus {
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, .15);
+}
+td.delete-item, th.delete-item {
+  background: rgb(238, 63, 77);
 }
 
 ::-webkit-scrollbar {

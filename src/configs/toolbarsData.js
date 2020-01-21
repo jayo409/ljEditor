@@ -1,5 +1,11 @@
 const commandList = [
   {
+		type: '表格',
+		event: 'visible',
+		param: 'table',
+		icon: 'biaoge'
+	},
+  {
     type: '表情',
     event: 'visible',
     param: 'emoji',
